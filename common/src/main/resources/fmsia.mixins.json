@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "de.keksuccino.fmsia.mixin.mixins.common",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "client.MixinScreenCustomization",
+    "client.MixinTitleScreen"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "fmsia.refmap.json",
+  "plugin": "de.keksuccino.fmsia.mixin.FMSIAMixinPlugin",
+  "minVersion": "0.8"
+}
