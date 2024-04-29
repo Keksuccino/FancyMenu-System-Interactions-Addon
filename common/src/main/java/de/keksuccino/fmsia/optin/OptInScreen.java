@@ -51,7 +51,7 @@ public class OptInScreen extends Screen {
 
         this.addRenderableWidget(new ExtendedButton(centerX - 5 - 150, this.height - (FOOTER_HEIGHT / 2) - 10, 150, 20, Component.translatable("fmsia.optin.screen.enable").withStyle(ChatFormatting.GREEN), button -> {
             try {
-                OptIn.putUser(Minecraft.getInstance().getUser().getGameProfile().getId(), true);
+                OptIn.putUser(Minecraft.getInstance().getUser().getProfileId(), true);
                 this.onClose();
             } catch (Exception ex) {
                 LOGGER.error(FMSIA.MSG_PREFIX + " Failed to click Enable button in Opt-In screen!", ex);
@@ -60,7 +60,7 @@ public class OptInScreen extends Screen {
 
         this.addRenderableWidget(new ExtendedButton(centerX + 5, this.height - (FOOTER_HEIGHT / 2) - 10, 150, 20, Component.translatable("fmsia.optin.screen.disable").withStyle(ChatFormatting.RED), button -> {
             try {
-                OptIn.putUser(Minecraft.getInstance().getUser().getGameProfile().getId(), false);
+                OptIn.putUser(Minecraft.getInstance().getUser().getProfileId(), false);
                 this.onClose();
             } catch (Exception ex) {
                 LOGGER.error(FMSIA.MSG_PREFIX + " Failed to click Disable button in Opt-In screen!", ex);
@@ -72,8 +72,6 @@ public class OptInScreen extends Screen {
     @Override
     public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partial) {
 
-        this.renderBackground(graphics);
-
         super.render(graphics, mouseX, mouseY, partial);
 
         graphics.drawCenteredString(this.font, this.headline, this.width / 2, (HEADER_HEIGHT / 2) - (this.font.lineHeight / 2), -1);
@@ -81,9 +79,9 @@ public class OptInScreen extends Screen {
     }
 
     @Override
-    public void renderBackground(@NotNull GuiGraphics graphics) {
+    public void renderBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partial) {
 
-        super.renderBackground(graphics);
+        super.renderBackground(graphics, mouseX, mouseY, partial);
 
         //Render header and footer separators
         RenderSystem.enableBlend();
@@ -94,18 +92,22 @@ public class OptInScreen extends Screen {
 
     }
 
-    public boolean mouseScrolled(double mouseX, double mouseY, double scrollDelta) {
-        return this.markdownRenderer.mouseScrolled(mouseX, mouseY, scrollDelta);
+    @Override
+    public boolean mouseScrolled(double mouseX, double mouseY, double scrollDeltaX, double scrollDeltaY) {
+        return this.markdownRenderer.mouseScrolled(mouseX, mouseY, scrollDeltaX, scrollDeltaY);
     }
 
+    @Override
     public boolean mouseReleased(double mouseX, double mouseY, int button) {
         return this.markdownRenderer.mouseReleased(mouseX, mouseY, button);
     }
 
+    @Override
     public void onClose() {
         Minecraft.getInstance().setScreen(this.parent);
     }
 
+    @Override
     public boolean shouldCloseOnEsc() {
         return false;
     }

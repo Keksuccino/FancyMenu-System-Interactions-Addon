@@ -86,7 +86,7 @@ public class OptIn {
 
     public static boolean hasClientUserFinishedOptInProcess() {
         try {
-            return hasUserFinishedOptInProcess(Minecraft.getInstance().getUser().getGameProfile().getId());
+            return hasUserFinishedOptInProcess(Minecraft.getInstance().getUser().getProfileId());
         } catch (Exception ex) {
             LOGGER.error(FMSIA.MSG_PREFIX + " Failed to get client user opt-in status!", ex);
         }
@@ -105,7 +105,7 @@ public class OptIn {
 
     public static boolean isAddonEnabledForClientUser() {
         try {
-            return isAddonEnabledForUser(Minecraft.getInstance().getUser().getGameProfile().getId());
+            return isAddonEnabledForUser(Minecraft.getInstance().getUser().getProfileId());
         } catch (Exception ex) {
             LOGGER.error(FMSIA.MSG_PREFIX + " Failed to get client user opt-in status!", ex);
         }
