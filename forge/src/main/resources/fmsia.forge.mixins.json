@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "de.keksuccino.fmsia.mixin.mixins.forge",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "fmsia.refmap.json",
+  "plugin": "de.keksuccino.fmsia.mixin.FMSIAMixinPlugin",
+  "minVersion": "0.8"
+}
