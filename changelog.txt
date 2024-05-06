@@ -1,1 +1,14 @@
 
+Changelog | FMSIA v1.0.1
+
+- Improved the warning message
+
+%changelog:end%
+
+
+
+Changelog | FMSIA v1.0.0
+
+- Initial release
+
+%changelog:end%
