@@ -1,7 +1,7 @@
 {
   "fmsia.optin.screen.title": "FancyMenu System Interactions Addon Opt-In Screen",
   "fmsia.optin.screen.text.headline": "FancyMenu System Interactions Addon",
-  "fmsia.optin.screen.text.body": "Your modpack contains the System Interactions Addon for FancyMenu!\nThis addon helps modpack creators to make complex menus,\nbut it can also be used for malicious actions on your system.\nIf this modpack is from a trusted author, you don't need to worry about anything,\nbut if this is a modpack from a relatively unknown author,\nmake sure it is save before you continue.\n\nYou can §cdisable§r the addon below, but this could also\nmake some menus §cnot §cwork §ccorrectly§r anymore!\n\nDo you want to enable or disable the addon now?",
+  "fmsia.optin.screen.text.body": "Your modpack contains the System Interactions Addon for FancyMenu!\nThis addon helps modpack creators to make complex menus, but it can also be used for malicious actions on your system.\nIf the modpack comes from a trusted author, you have nothing to worry about.\nHowever, if it's from an author you're not familiar with, please verify it is safe to use before proceeding.\n\nYou can §cdisable§r the addon below, but this may cause some menus to §cstop §cworking §ccorrectly§r!\n\nDo you want to enable or disable the addon now?",
   "fmsia.optin.screen.enable": "Enable",
   "fmsia.optin.screen.disable": "Disable",
   "fmsia.actions.copyfile": "Copy File/Folder",
